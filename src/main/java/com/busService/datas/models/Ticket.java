@@ -15,4 +15,5 @@ public class Ticket {
     private int seatNumber;
     private double price;
     private String paymentStatus;
+    private String destination;
 }

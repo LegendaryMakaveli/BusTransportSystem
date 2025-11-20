@@ -13,7 +13,6 @@ public class Conductor {
     private int age;
     private Gender gender;
     private String phone;
-    private Roles role;
     private String password;
-    private boolean active;
+    private boolean isActive;
 }

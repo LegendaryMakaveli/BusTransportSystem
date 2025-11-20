@@ -9,7 +9,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Bus {
     @Id
     private String id;
+    private String name;
     private String model;
+    private String color;
+    private String year;
     private String plateNumber;
     private String chasisNumber;
     private int capacity;
