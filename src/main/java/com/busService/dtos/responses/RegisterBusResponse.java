@@ -6,7 +6,8 @@ import lombok.Data;
 @Data
 public class RegisterBusResponse {
     private String id;
-    private String busDetails; //todo--> busName, busModel,busYear,busColor, busPlateNumber,busChasisNumber
+    private String busDetails;
+    private int year;
     private int capacity;
     private boolean isAvailable;
 }

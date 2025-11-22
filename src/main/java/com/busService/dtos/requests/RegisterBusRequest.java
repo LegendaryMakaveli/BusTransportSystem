@@ -8,7 +8,7 @@ public class RegisterBusRequest {
     private String name;
     private String model;
     private String color;
-    private String year;
+    private int year;
     private String plateNumber;
     private String chasisNumber;
     private int capacity;
