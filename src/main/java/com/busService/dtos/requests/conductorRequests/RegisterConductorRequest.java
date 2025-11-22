@@ -9,4 +9,5 @@ public class RegisterConductorRequest {
     private String gender;
     private String phone;
     private String password;
+    private String Role;
 }

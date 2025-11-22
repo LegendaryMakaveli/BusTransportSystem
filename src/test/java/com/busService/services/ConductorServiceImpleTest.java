@@ -145,6 +145,7 @@ public class ConductorServiceImpleTest {
 
     private static RegisterConductorRequest registerRequest() {
         RegisterConductorRequest request = new RegisterConductorRequest();
+        request.setRole("Conductor");
         request.setName("Mudashiru Alabi");
         request.setAge(25);
         request.setGender("male");

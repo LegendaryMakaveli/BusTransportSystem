@@ -3,6 +3,7 @@ package com.busService.utils;
 import com.busService.datas.models.Bus;
 import com.busService.datas.models.Conductor;
 import com.busService.datas.models.Gender;
+import com.busService.datas.models.Roles;
 import com.busService.dtos.requests.RegisterBusRequest;
 import com.busService.dtos.requests.conductorRequests.*;
 import com.busService.dtos.responses.ConductorResponses.*;
@@ -14,6 +15,7 @@ public class Mapper {
 
     public static Bus mapToRegisterBus(RegisterBusRequest busRequest) {
         Bus newBus = new Bus();
+
         newBus.setName(busRequest.getName().trim().toUpperCase());
         newBus.setModel(busRequest.getModel().trim().toUpperCase());
         newBus.setColor(busRequest.getColor().trim().toUpperCase());
@@ -40,6 +42,7 @@ public class Mapper {
 
     public static Conductor mapToRegisterConductor(RegisterConductorRequest request) {
         Conductor newConductor = new Conductor();
+        newConductor.setRole(Roles.valueOf(request.getRole().toUpperCase()));
         newConductor.setName(request.getName().trim().toUpperCase());
         newConductor.setAge(request.getAge());
         newConductor.setGender(Gender.valueOf(request.getGender().trim().toUpperCase()));

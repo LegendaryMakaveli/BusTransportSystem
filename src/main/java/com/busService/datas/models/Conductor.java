@@ -17,5 +17,6 @@ public class Conductor {
     private String phone;
     private String password;
     private boolean isActive;
+    private Roles role;
     private LocalDateTime conductorRegistrationDate;
 }

@@ -5,6 +5,8 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDateTime;
+
 @Data
 @Document(collection = "Drivers")
 public class Driver {
@@ -17,6 +19,8 @@ public class Driver {
     private int age;
     private Gender gender;
     private String phone;
+    private Roles role;
     private String password;
     private boolean active;
+    private LocalDateTime registerDriverAt;
 }

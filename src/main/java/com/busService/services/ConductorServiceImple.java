@@ -1,9 +1,12 @@
 package com.busService.services;
 
 import com.busService.datas.models.Conductor;
+import com.busService.datas.models.Roles;
 import com.busService.datas.repositories.ConductorRepository;
+import com.busService.dtos.requests.DriverRequests.RegisterDriverRequest;
 import com.busService.dtos.requests.conductorRequests.*;
 import com.busService.dtos.responses.ConductorResponses.*;
+import com.busService.exceptions.InvalidRoleException;
 import com.busService.exceptions.UserAlreadyExistException;
 import com.busService.exceptions.conductorInputValidationException;
 import com.mongodb.DuplicateKeyException;
@@ -26,6 +29,7 @@ public class ConductorServiceImple implements ConductorService {
 
     @Override
     public RegisterConductorResponse registerConductor(RegisterConductorRequest request) {
+        validateDriverRole(request);
         validateConductorInput(request);
 
         Conductor newConductor = mapToRegisterConductor(request);
@@ -165,5 +169,14 @@ public class ConductorServiceImple implements ConductorService {
         if (request.getConductorName() == null || request.getConductorName().trim().isEmpty())throw new conductorInputValidationException("Name cannot be empty");
     }
 
+    private void validateDriverRole(RegisterConductorRequest request) {
+        try {
+            Roles role = Roles.valueOf(request.getRole().trim().toUpperCase());
+            if (role != Roles.CONDUCTOR)throw new InvalidRoleException("Only users with CONDUCTOR role can register on this page");
+
+        } catch (IllegalArgumentException | NullPointerException e) {
+            throw new InvalidRoleException("Invalid role");
+        }
+    }
 
 }
