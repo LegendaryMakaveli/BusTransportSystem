@@ -1,4 +1,4 @@
-package com.busService.dtos.requests;
+package com.busService.dtos.requests.DriverRequests;
 
 
 import lombok.Data;

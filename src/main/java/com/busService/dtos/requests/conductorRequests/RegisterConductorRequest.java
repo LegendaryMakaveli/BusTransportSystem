@@ -1,13 +1,12 @@
-package com.busService.dtos.requests;
+package com.busService.dtos.requests.conductorRequests;
 
-import com.busService.datas.models.Gender;
 import lombok.Data;
 
 @Data
 public class RegisterConductorRequest {
     private String name;
     private int age;
-    private Gender gender;
+    private String gender;
     private String phone;
     private String password;
 }

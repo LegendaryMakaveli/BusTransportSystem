@@ -1,4 +1,4 @@
-package com.busService.dtos.requests;
+package com.busService.dtos.requests.conductorRequests;
 
 import com.busService.datas.models.Gender;
 import lombok.Data;

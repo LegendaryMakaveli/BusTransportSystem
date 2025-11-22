@@ -1,6 +1,5 @@
-package com.busService.dtos.responses;
+package com.busService.dtos.responses.DriverResponses;
 
-import com.busService.datas.models.Bus;
 import lombok.Data;
 
 @Data
